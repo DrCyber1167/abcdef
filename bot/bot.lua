@@ -353,7 +353,6 @@ developer: @mrunusuall
 channel: @astroteam
 G00D LUCK ^_^
 ]],
-]],
     help_text = [[
 Commands list :
 ••!kick [username|id]
