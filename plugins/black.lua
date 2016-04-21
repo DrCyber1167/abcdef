@@ -1,34 +1,32 @@
 do
 
 function run(msg, matches)
-  return [[B L A C K +
+  return [[Astro Super GP
 -----------------------------------
-A new bot for manage your SuperGroups.
+A new bot for manage your Supergroups.
 -----------------------------------
-@Black_CH #Channel
+@AstroTEam #Channel
 -----------------------------------
-@MehdiHS #developer
+@Mrunusuall #Developer
 -----------------------------------
-@YflQw #manager
+@@Keiranlee #Manager
 -----------------------------------
-@Mr_Surena #manager
+Bot number : +1 760 767 9054
 -----------------------------------
-Bot number : +19092545429
------------------------------------
-Bot version : 6.7 ]]
+Bot version : 1 ]]
 end
 return {
   description = ".", 
   usage = "use black command",
   patterns = {
-    "^/black$",
-    "^!black$",
-    "^%bLack$",
-    "^$black$",
-   "^#Black$",
-   "^#Black",
-   "^/black$",
-   "^#black$",
+    "^/astro$",
+    "^!astro$",
+    "^%astro$",
+    "^$astro$",
+   "^#astro$",
+   "^#astro",
+   "^/astro$",
+   "^#astro$",
 
   },
   run = run
