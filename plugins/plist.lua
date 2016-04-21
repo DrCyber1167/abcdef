@@ -1,7 +1,7 @@
 do
 
 function run(msg, matches)
-  return [[http://s6.picofile.com/file/8241491884/photo_2016_03_02_04_52_05.jpg]]
+  return [[http://www.8up.ir/images/kkvm02ko5jvj13t4oxr.jpg]]
 end
 return {
   description = ".", 
