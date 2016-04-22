@@ -62,7 +62,9 @@ Group password
 ترجمه متن به زبان مورد نظر برای مثال
 !tr fa hi
 ➖➖➖➖➖➖➖➖➖➖➖➖
-
+••!weather
+دریافت اب و هوای شهر مورد نظر
+➖➖➖➖➖➖➖➖➖➖➖➖
 developer: @mrunusuall
 channel: @astroteam 
 G00D LUCK ^_^
