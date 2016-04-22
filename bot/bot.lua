@@ -256,7 +256,14 @@ function create_config( )
     "updater",
     "qrCode",
     "groupRequest_V2_Test",
-    "inAdmin"
+    "inAdmin",
+    "tr",
+    "google",
+    "weather",
+    "tr",
+    "tools",
+    "remmsg",
+    "short"
 
     },
     sudo_users = {114307641,183991347,0,tonumber(120395246)},--Sudo users
