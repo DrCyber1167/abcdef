@@ -219,7 +219,6 @@ function create_config( )
     "broadcast",
     "inv",
     "password",
-    "welcome",
     "toSupport",
     "me",
     "toStciker_By_Reply",
