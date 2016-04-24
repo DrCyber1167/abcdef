@@ -1,214 +1,140 @@
 #!/usr/bin/env bash
 
-
 THIS_DIR=$(cd $(dirname $0); pwd)
-
 cd $THIS_DIR
 
-
 update() {
-
-  git pull
-
-  git submodule update --init --recursive
-
-  install_rocks
-
+  git pull
+  git submodule update --init --recursive
+  install_rocks
 }
-
 
 # Will install luarocks on THIS_DIR/.luarocks
-
 install_luarocks() {
+  git clone https://github.com/keplerproject/luarocks.git
+  cd luarocks
+  git checkout tags/v2.3.0-rc2 # Release Candidate
 
-  git clone https://github.com/keplerproject/luarocks.git
+  PREFIX="$THIS_DIR/.luarocks"
 
-  cd luarocks
+  ./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
 
-  git checkout tags/v2.2.1 # Current stable
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
+  make build && make install
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting.";exit $RET;
+  fi
 
-  PREFIX="$THIS_DIR/.luarocks"
-
-
-  ./configure --prefix=$PREFIX --sysconfdir=$PREFIX/luarocks --force-config
-
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
-
-  make build && make install
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting.";exit $RET;
-
-  fi
-
-
-  cd ..
-
-  rm -rf luarocks
-
+  cd ..
+  rm -rf luarocks
 }
-
 
 install_rocks() {
+  ./.luarocks/bin/luarocks install luasec
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-  ./.luarocks/bin/luarocks install luasocket
+  ./.luarocks/bin/luarocks install lbase64 20120807-3
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-  RET=$?; if [ $RET -ne 0 ];
+  ./.luarocks/bin/luarocks install luafilesystem
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-    then echo "Error. Exiting."; exit $RET;
+  ./.luarocks/bin/luarocks install lub
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-  fi
+  ./.luarocks/bin/luarocks install luaexpat
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
+  ./.luarocks/bin/luarocks install redis-lua
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-  ./.luarocks/bin/luarocks install oauth
+  ./.luarocks/bin/luarocks install lua-cjson
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-  RET=$?; if [ $RET -ne 0 ];
+  ./.luarocks/bin/luarocks install fakeredis
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-    then echo "Error. Exiting."; exit $RET;
+  ./.luarocks/bin/luarocks install xml
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-  fi
+  ./.luarocks/bin/luarocks install feedparser
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 
-
-  ./.luarocks/bin/luarocks install redis-lua
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
-
-  ./.luarocks/bin/luarocks install lua-cjson
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
-
-  ./.luarocks/bin/luarocks install fakeredis
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
-
-  ./.luarocks/bin/luarocks install xml
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
-
-  ./.luarocks/bin/luarocks install feedparser
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
-
-  ./.luarocks/bin/luarocks install serpent
-
-  RET=$?; if [ $RET -ne 0 ];
-
-    then echo "Error. Exiting."; exit $RET;
-
-  fi
-
+  ./.luarocks/bin/luarocks install serpent
+  RET=$?; if [ $RET -ne 0 ];
+    then echo "Error. Exiting."; exit $RET;
+  fi
 }
-
 
 install() {
+  git pull
+  git submodule update --init --recursive
+  patch -i "patches/disable-python-and-libjansson.patch" -p 0 --batch --forward
+  RET=$?;
 
-  git pull
+  cd tg
+  if [ $RET -ne 0 ]; then
+    autoconf -i
+  fi
+  ./configure && make
 
-  git submodule update --init --recursive
-
-  patch -i "patches/disable-python-and-libjansson.patch" -p 0 --batch --forward
-
-  RET=$?;
-
-
-  cd tg
-
-  if [ $RET -ne 0 ]; then
-
-    autoconf -i
-
-  fi
-
-  ./configure && make
-
-
-  RET=$?; if [ $RET -ne 0 ]; then
-
-    echo "Error. Exiting."; exit $RET;
-
-  fi
-
-  cd ..
-
-  install_luarocks
-
-  install_rocks
-
+  RET=$?; if [ $RET -ne 0 ]; then
+    echo "Error. Exiting."; exit $RET;
+  fi
+  cd ..
+  install_luarocks
+  install_rocks
 }
 
-
 if [ "$1" = "install" ]; then
-
-  install
-
+  install
 elif [ "$1" = "update" ]; then
-
-  update
-
+  update
 else
+  if [ ! -f ./tg/telegram.h ]; then
+    echo "tg not found"
+    echo "Run $0 install"
+    exit 1
+  fi
 
-  if [ ! -f ./tg/telegram.h ]; then
-
-    echo "tg not found"
-
-    echo "Run $0 install"
-
-    exit 1
-
-  fi
-
-
-  if [ ! -f ./tg/bin/telegram-cli ]; then
-
-    echo "tg binary not found"
-
-    echo "Run $0 install"
-
-    exit 1
-
-  fi
-
-  while true; do
-
-   rm -r ../.telegram-cli/state
-
-   ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/bot.lua -l 1 -E $@
-
-   sleep 10
-
-  done
-
+  if [ ! -f ./tg/bin/telegram-cli ]; then
+    echo "tg binary not found"
+    echo "Run $0 install"
+    exit 1
+  fi
+  
+  chmod 777 blackplus.sh
+  
+  #Adding some color. By @MehdiHS
+   echo -e "\033[38;5;208m"
+   echo -e "     > Channel : @Black_CH                        "
+   echo -e "     > Developer : @MehdiHS                       "
+   echo -e "     > Bot ID : @BlackPlus                        "
+   echo -e "     > Github : GitHub.com/Mehdi-HS/BlackPlus     "
+   echo -e "                                              \033[0;00m"
+   echo -e "\e[36m"
+  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/bot.lua -l 1 -E $@
 fi
