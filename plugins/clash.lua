@@ -1,6 +1,14 @@
+--[[
 
+#
+#       @GPMod
+#   @dragon_born
+#
 
-local apikey = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImQxZDgyYjdjLWNmYzYtNDI2NC04NGY2LTNhMGUyMzNiY2Q3MCIsImlhdCI6MTQ1OTQ3NjY5OSwic3ViIjoiZGV2ZWxvcGVyLzYyMjRkZjAxLTJlNmEtZDc2NS0zNWFhLWM0ZTNmY2QxMzY0NyIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjgyLjEwMi4xMS4yMDEiXSwidHlwZSI6ImNsaWVudCJ9XX0.4SnhwSz4le5My0kV_SZvc3hced_JmMVq7WOOH0qglNa40npv_TtFYNbq70WrRgLlbKVgYQPB7DTU0XCwWg45fQ'
+]]
+
+local apikey = 
+'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjI0MGIyMTc1LWY3MWYtNGJiZi04OGYzLWMzZDg1YjBjZmE2MCIsImlhdCI6MTQ2MTU3NTk1OSwic3ViIjoiZGV2ZWxvcGVyL2ZiNjg3YmRjLTA5ZDItMjg1YS00NWQzLTY2ZTc5NTFiZmE4ZCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjkzLjE3NC45Mi4xOTIiXSwidHlwZSI6ImNsaWVudCJ9XX0.1u6CLddtxV69E-s5Kw8qkx7h51BtyF64Ox94ZfAAfv7W2jfMnnww0Pd5g4exv4mIVlzZVURtrfbKTSbN9pw7FA' 
 local function run(msg, matches)
  if matches[1]:lower() == 'clan' or matches[1]:lower() == 'clash' or matches[1]:lower() == 'clantag' or matches[1]:lower() == 'tag' then
   local clantag = matches[2]
@@ -14,7 +22,7 @@ local function run(msg, matches)
   local result = cmd:read('*all')
   local jdat = json:decode(result)
 if jdat.reason then
-      if jdat.reason == 'accessDenied' then return '*Error' end
+      if jdat.reason == 'accessDenied' then return 'برای ثبت API Key خود به سایت زیر بروید\ndeveloper.clashofclans.com' end
    return '#Error\n'..jdat.reason
   end
   local text = 'Clan Tag: '.. jdat.tag
@@ -42,7 +50,7 @@ if jdat.reason then
   local result = cmd:read('*all')
   local jdat = json:decode(result)
   if jdat.reason then
-      if jdat.reason == 'accessDenied' then return '*Error' end
+      if jdat.reason == 'accessDenied' then return 'برای ثبت API Key خود به سایت زیر بروید\ndeveloper.clashofclans.com' end
    return '#Error\n'..jdat.reason
   end
   local leader = ""
@@ -61,7 +69,7 @@ text = leader.."\n"..coleader.."\n\nClan Members:"
   for i = 1, #items do
   text = text..'\n'..i..'- '..items[i].name..'\nlevel: '..items[i].expLevel.."\n"
   end
-  text = text.."\n\n@GPMod"
+  text = text.."\n\n@AstroTEam"
    cmd:close()
   return text
  end
