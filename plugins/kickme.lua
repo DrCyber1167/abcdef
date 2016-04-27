@@ -31,7 +31,7 @@ return {
     "!kickme"
   },
   patterns = {
-    "^!kickme$"
+    "^[/#!](kickme)$",
   },
   run = run
 }
