@@ -72,7 +72,7 @@ return {
   description = "Searches Minecraft server and sends info",
   usage = usage,
   patterns = {
-    "^!mine (.*)$"
+  "^[!#$/]([Mm]e (.*))$"
   },
   run = run
 }
