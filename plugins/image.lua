@@ -1,7 +1,7 @@
 do
 
 local function get_9GAG()
-  local url = "http://thecatapi.com/?id=470"
+  local url = "http://download.shutterstock.com/gatekeeper/abc/shutterstock_108559295.jpg"
   local b,c = http.request(url)
   if c ~= 200 then return nil end
   local gag = json:decode(b)
