@@ -8,7 +8,7 @@ NONVOLUNTARYCHECK=0
 VOLUNTARY=1
 VOLUNTARYCHECK=0
 I=1
-BOT=blackplus
+BOT=black
 RELOADTIME=10
 
 function tmux_mode {
@@ -27,14 +27,14 @@ rst=$'\e[0m'
 
 cat << EOF
 
- $f1  @Black_CH     $f2 @Black_CH     $f3  @Black_CH   $f4  @Black_CH    $f5 @Black_CH    $f6 @Black_CH  $rst
+ $f1  @AstroTeam     $f2 @AstroTeam     $f3  @AstroTeam   $f4  @AstroTeam    $f5 @AstroTeam    $f6 @AstroTeam  $rst
 
 EOF
 echo -e "                \e[100m                BlackPlus script           \e[00;37;40m"
 echo -e "               \e[01;34m                 By MehdiHS                \e[00;37;40m"
 echo ""
 cat << EOF
- $bld$f1 @Black_CH   $f2 @Black_CH    $f3  @Black_CH    $f4 @Black_CH   $f5 @Black_CH    $f6  @Black_CH  $rst
+ $bld$f1 @AstroTeam   $f2 @AstroTeam    $f3  @AstroTeam    $f4 @AstroTeam   $f5 AstroTeam    $f6  @AstroTeam  $rst
 
 
 EOF
@@ -55,10 +55,9 @@ sleep 0.5
 
 
 echo ""
-echo -e "\033[38;5;208m     > Channel : @Black_CH                         \033[0;00m"
-echo -e "\033[38;5;208m     > Developer : @MehdiHS                        \033[0;00m"
-echo -e "\033[38;5;208m     > Bot ID : @BlackPlus                         \033[0;00m"
-echo -e "\033[38;5;208m     > Github : GitHub.com/Mehdi-HS/BlackPlus      \033[0;00m"
+echo -e "\033[38;5;208m     > Channel : @AstroTeam                         \033[0;00m"
+echo -e "\033[38;5;208m     > Developer : @mrunusuall                      \033[0;00m"
+echo -e "\033[38;5;208m     > Bot ID : @AstroGP                         \033[0;00m"
 echo -e "\033[38;5;208m                                                   \033[0;00m"
 
 sleep 1.5
