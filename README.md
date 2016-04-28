@@ -1,21 +1,21 @@
-# [BlackPlus](https;//telegram.me/blackplus) > [GitHub](https://GitHub.com/Mehdi-HS/BlackPlus) | [Site](http://BlackPlus.ir) |  [Channel](https://telegram.me/black_ch)
+# [Astro](https;//telegram.me/astrogp) > [GitHub](https://github.com/uckian1395/black.git)  |  [Channel](https://telegram.me/Astroteam)
 * * *
 *New Bot For Manage Your SuperGroups.
 
 *A Advanced Bot Based In Teleseed (Normal Groups)
 
 * * *
-# [BlackPlus](https://telegram.me/Blackplus) Uses "Anticrash" & "Autolaunch" To Be Active All The Time
+# [Astro](https://telegram.me/astrogp) Uses "Anticrash" & "Autolaunch" To Be Active All The Time
 # آموزش نصب سروس
 1. کد زیر را در ترمینال وارد کنید.
 
-sudo apt-get update; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev autoconf -y --force-yes && git clone https://github.com/mehdi-hs/BlackPlus.git && cd BlackPlus && chmod +x launch.sh && ./launch.sh install && ./launch.sh
+sudo apt-get update; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev autoconf -y --force-yes && git clone https://github.com/uckian1395/black.git && cd black && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 
 2.بعد از چند دقیقه ربات از شما شماره ای میگیره که روبات روی اون نصب شه...
 بعد از وارد کردن شماره و وارد کردن کد در صورتی ربات در اکانت مورد نظر نصب شد ترمینال را ببندید و ترمینال جدید باز کنید
 سپس دستور زیر را بزنید...
 
-cd BlackPlus 
+cd black 
 
 دقت کنید که در دستور بالا حرف سی و پی رو کپتال بنویسید که اررور نده
 بعد این کد رو بزنید
@@ -34,7 +34,7 @@ tmux new-session -s script "bash blackplus.sh -t"
 
 اول در ترمینال دستور زیر را تایپ کنید
 
-cd BlackPlus
+cd black
 
 سپس این دستور را وارد کنید.
 
