@@ -11,34 +11,7 @@
 
 sudo apt-get update; sudo apt-get install libreadline-dev libconfig-dev libssl-dev lua5.2 liblua5.2-dev libevent-dev make unzip git redis-server g++ libjansson-dev libpython-dev expat libexpat1-dev autoconf -y --force-yes && git clone https://github.com/uckian1395/black.git && cd black && chmod +x launch.sh && ./launch.sh install && ./launch.sh
 
-2.بعد از چند دقیقه ربات از شما شماره ای میگیره که روبات روی اون نصب شه...
-بعد از وارد کردن شماره و وارد کردن کد در صورتی ربات در اکانت مورد نظر نصب شد ترمینال را ببندید و ترمینال جدید باز کنید
-سپس دستور زیر را بزنید...
 
-cd black 
-
-دقت کنید که در دستور بالا حرف سی و پی رو کپتال بنویسید که اررور نده
-بعد این کد رو بزنید
-
-tmux new-session -s script "bash blackplus.sh -t"
-# (از آنتی کرش در سرور های مجانی نمیتوانید استفاده کنید)
-
-
-بعد از چند ثانیه ربات ران میشه
-
-# قسمت دوم این آموزش برای فعال کردن آنتی کرش هست و از این به بعد اگر ربات آف شد مرحله 2 رو انجام دهید
-
-برای سودو کردن خودتون هم در پوشه دیتا فیل کافیگ رو ادیت کنید و در قسمت سودو یوزر ایدی عددی خودتون رو بنویسید
-
-هر هفته میتوانید با دستور های زیر جدید ترین پلاگین ها و آپدیت هارو دریافت کنید.
-
-اول در ترمینال دستور زیر را تایپ کنید
-
-cd black
-
-سپس این دستور را وارد کنید.
-
-git pull
 
 * * *
 # Features
