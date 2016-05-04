@@ -130,11 +130,11 @@ else
   
   #Adding some color. By @MehdiHS
    echo -e "\033[38;5;208m"
-   echo -e "     > Channel : @Black_CH                        "
+   echo -e "     > Channel : @astrotem                        "
    echo -e "     > Developer : @MehdiHS                       "
    echo -e "     > Bot ID : @BlackPlus                        "
    echo -e "     > Github : GitHub.com/Mehdi-HS/BlackPlus     "
    echo -e "                                              \033[0;00m"
    echo -e "\e[36m"
-  ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/bot.lua -l 1 -E $@
+  ./tg/bin/telegram-cli -b ./tg/tg-server.pub -s ./bot/bot.lua -l 1 -E $@
 fi
