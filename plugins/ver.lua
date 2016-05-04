@@ -1,17 +1,15 @@
 do
 
 function run(msg, matches)
-  return [[ 🤖Astro Super GP🤖
+  return [[ 🤖AviraGP🤖
 ➖➖➖➖➖➖➖➖➖➖
 🆕A new bot for manage your Supergroups.🆕
 ➖➖➖➖➖➖➖➖➖➖
-@AstroTEam #Channel
+@Avirateam #Channel
 ➖➖➖➖➖➖➖➖➖➖
 @Mrunusuall #Developer
 ➖➖➖➖➖➖➖➖➖➖
-@Keiranlee #Manager
-➖➖➖➖➖➖➖➖➖➖
-Bot number : +1 760 767 9054
+@Mohammadarak #Developer
 ➖➖➖➖➖➖➖➖➖➖
 ⚡️Bot version : 1⚡️ ]]
 end
