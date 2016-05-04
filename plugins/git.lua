@@ -58,8 +58,8 @@ return {
 		"github> (account/proje) : دانلود سورس",
 		},
 	patterns = {
-		"^([Gg]ithub>) (.*)",
-		"^([Gg]ithub) (.*)",
+		"^(/[Gg]ithub>) (.*)",
+		"^(/[Gg]ithub) (.*)",
 		},
 	run = run
 }
