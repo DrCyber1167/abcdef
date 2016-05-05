@@ -9,8 +9,8 @@ local action = function(msg, blocks, ln)
         end
         return
     end
-    if blocks[1] == 'help' then
-        mystat('/help')
+    if blocks[1] == 'test' then
+        mystat('/test')
         if msg.chat.type == 'private' then
             local name = msg.from.first_name:mEscape()
             api.sendMessage(msg.chat.id, make_text(lang[ln].help.private, name), true)
