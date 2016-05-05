@@ -39,13 +39,13 @@ local action = function(msg, blocks, ln)
         local msg_id = msg.message_id
         local text
         if role == 'user' then
-            text = lang[ln].help.all
+            text = 'test'
         elseif role == 'mod' then
-            text = lang[ln].help.moderator
+            text = 'test'
         elseif role == 'owner' then
-            text = lang[ln].help.owner
+            text = 'test'
         elseif role == 'info' then
-            text = lang[ln].credits
+            text = 'test'
         end
         api.editMessageText(msg.chat.id, msg_id, text, keyboard, true)
     end
