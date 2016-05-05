@@ -19,12 +19,12 @@ local action = function(msg, blocks, ln)
         keyboard = {}
         keyboard.inline_keyboard = {
     	    {
-    		    {text = "Normal user", callback_data = '/user'},
-			    {text = "Moderator", callback_data = '/mod'},
-    		    {text = "Owner", callback_data = '/owner'}
+    		    {text = "Normal user", 'test = '/user'},
+			    {text = "Moderator", 'test' = '/mod'},
+    		    {text = "Owner", 'test- = '/owner'}
 	    	},
     		{
-    			{text = "Info", callback_data = '/info'}
+    			{text = "Info", 'test' = '/info'}
 	    	}
     	}
         local res = api.sendKeyboard(msg.from.id, 'Choose the *role* to see the available commands:', keyboard, true)
