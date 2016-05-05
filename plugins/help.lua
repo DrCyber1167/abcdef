@@ -9,8 +9,8 @@ local action = function(msg, blocks, ln)
         end
         return
     end
-    if blocks[1] == 'test' then
-        mystat('/test')
+    if blocks[1] == 'help' then
+        mystat('/help')
         if msg.chat.type == 'private' then
             local name = msg.from.first_name:mEscape()
              api.sendMessage(msg.chat.id,'test', true)
@@ -54,10 +54,10 @@ end
 return {
 	action = action,
 	triggers = {
-    	'^/(test)@'..bot.username..'$',
+    	'^/(help)@'..bot.username..'$',
 	    '^/(start)@'..bot.username..'$',
 	    '^/(start)$',
-	    '^/(test)$',
+	    '^/(help)$',
 	    '^###cb:/(user)',
     	'^###cb:/(owner)',
 	    '^###cb:/(mod)',
