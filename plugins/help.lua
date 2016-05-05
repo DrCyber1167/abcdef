@@ -21,7 +21,7 @@ local action = function(msg, blocks, ln)
     	    {
     		    {text = "Normal user", 'test = '/user'},
 			    {text = "Moderator", 'test' = '/mod'},
-    		    {text = "Owner", 'test- = '/owner'}
+    		    {text = "Owner", 'test' = '/owner'}
 	    	},
     		{
     			{text = "Info", 'test' = '/info'}
