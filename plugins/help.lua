@@ -5,7 +5,7 @@ local action = function(msg, blocks, ln)
             local hash = 'bot:general'
             client:hincrby(hash, 'users', 1)
             local name = msg.from.first_name:mEscape()
-            api.sendMessage(msg.chat.id, make_text(lang[ln].help.private, name), true)
+            api.sendMessage(msg.chat.id,'test', true)
         end
         return
     end
@@ -13,7 +13,7 @@ local action = function(msg, blocks, ln)
         mystat('/test')
         if msg.chat.type == 'private' then
             local name = msg.from.first_name:mEscape()
-            api.sendMessage(msg.chat.id, make_text(lang[ln].help.private, name), true)
+             api.sendMessage(msg.chat.id,'test', true)
             return
         end
         keyboard = {}
@@ -29,9 +29,9 @@ local action = function(msg, blocks, ln)
     	}
         local res = api.sendKeyboard(msg.from.id, 'Choose the *role* to see the available commands:', keyboard, true)
         if res then
-            api.sendMessage(msg.chat.id, lang[ln].help.group_success, true)
+            api.sendMessage(msg.chat.id,'test', true)
         else
-            api.sendMessage(msg.chat.id, lang[ln].help.group_not_success, true)
+            api.sendMessage(msg.chat.id,'test', true)
         end
     end
     if msg.cb then
