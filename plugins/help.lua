@@ -54,8 +54,6 @@ end
 return {
 	action = action,
 	triggers = {
-    	'^/(test)@'..bot.username..'$',
-	    '^/(start)@'..bot.username..'$',
 	    '^/(start)$',
 	    '^/(test)$',
 	    '^###cb:/(user)',
