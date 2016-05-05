@@ -1,16 +1,79 @@
 return {
     en = {
-        bonus = {
-
-     mods_list = 'List of the *group\'s moderators*:\n&&&1',
-                }
-     help{
-     owner = 'test',
-     moderator = 'tsst',
-     all = 'hdudj',
-     private = 'jjihh',
-    group_success = '_I\'ve sent you the help message in private_',
-    group_not_success = '_Please message me first so I can message you_',
-    initial = 'Choose the *role* to see the available commands:' 
-     },
+help = {
+            owner = '*Commands for the owner*:\n'
+                    ..'`/owner` (by reply) : set a new owner\n'
+                    ..'`/promote` (by reply|username) : promote as moderator a member\n'
+                    ..'`/demote` (by reply|username) : demote a member\n'
+                    ..'`/setlink [link|\'no\']` : set the group link, so it can be re-called by mods, or unset it\n'
+                    ..'(obviuosly, the ability to appoint moderators is aimed to let users know who are the real moderators in the group, and so who can add and kick people.\nSo it\'s hardly suggested to point as moderator only who really is a moderator)\n\n',
+            moderator = '*Commands for moderators*:\n'
+                        ..'`/menu` : manage the group settings in private\n'
+                        ..'`/kick` (by reply|username) : kick a user from the group (he can be added again)\n'
+                        ..'`/ban` (by reply|username) : ban a user from the group\n'
+                        ..'`/unban` (by reply|username) : unban a user from the group\n'
+                        ..'`/flood [kick/ban]` : choose what the bot should do when the flood limit is triggered\n'
+                        ..'`/flood [on/off]` : turn on/off the flood listener\n'
+                        ..'`/flood [number]` : set how many messages a user can write in 5 seconds\n'
+                        ..'`/setrules <rules>` : set a completly new list of rules\n'
+                        ..'`/addrules <rules>` : add at the tile of the existing rules a new set of rules\n'
+                        ..'`/setabout <bio>` : set a completly new description for the group\n'
+                        ..'`/addabout <bio>` : add at the end of the existing description other relevant informations\n'
+                        ..'With this four commands above, you can use asterisks (*bold*), uderscores (_italic_) or the oblique accent (`monospace`) to markup your rules/description.\n'
+                        ..'`/media [kick|ban|allow] [type]` : choose the action to perform when the media (type) is sent\n'
+                        ..'`/media` : show the status of media settings\n'
+                        ..'`/link` : get the group link, if setted\n'
+                        ..'`/lang` : see the list of available languages\n'
+                        ..'`/lang` [code] : change the language of the bot\n'
+                        ..'`/settings` : show the group settings\n'
+                        ..'`/warn [kick/ban]` : choose the action to perform once the max number of warnings is reached\n'
+                        ..'`/warn` (by reply) : warn an user. At x warns, he will be kicked/banned\n'
+                        ..'`/getwarns` (by reply) : see how many times an user have been warned\n'
+                        ..'`/nowarns` (by reply) : reset to zero the warns of an user\n'
+                        ..'`/warnmax` : set the max number of the warns before be banned/kicked\n'
+                        ..'`/extra` [#trigger] [reply] : set a new custom command that will be triggered with #hashtags (markdown supported)\n'
+                        ..'`/extra list` : get the list of your custom commands\n'
+                        ..'`/extra del` [#trigger] : delete the trigger and its content\n'
+                        ..'`/setpoll [link|\'no\']` : save a poll link from @pollbot, so it can be re-called by mods, or unset it\n'
+                        ..'`/poll` : get the current poll link\n'
+                        ..'`/disable [arab|rtl]` : everyone with RTL character in the name/everyone who send a text with arab characters will be kicked\n'
+                        ..'`/enable [arab|rtl]` : allow RTL character/arab texts\n'
+                        ..'`/disable <rules|about|modlist|extra>` : this commands will be available only for moderators\n'
+                        ..'`/enable <rules|about|modlist|extra>` : this commands will be available for all\n'
+                        ..'`/enable|/disable <welcome|report>` : switch on/off the welcome message or the ability to use \'@admin\' shortcut\n'
+                        ..'`/report [on/off]` (by reply) : the user won\'t be able/will be able to use \'@admin\' shortcut\n'
+                        ..'`/welcome <no|r|a|ra|ma|rm|rma|custom text>` : how the welcome message is composed, or set your own welcome message\n'
+                        ..'_custom_ : set your own welcome message (you can use *$username*, *$name*, *&title* (chat title) as placeholders)\n'
+                        ..'_no_ : only the simple welcome message\n'
+                        ..'_r_ : the welcome message will be integrated with rules\n'
+                        ..'_a_ : the welcome message will be integrated with the about text\n'
+                        ..'_m_ : the welcome message will be integrated with the moderators list\n'
+                        ..'_ra|ar_ : the welcome message will be integrated with rules and bio\n'
+                        ..'_ma|am_ : the welcome message will be integrated with about text and moderators list\n'
+                        ..'_rm|mr_ : the welcome message will be integrated with rules and moderators list\n'
+                        ..'_ram|rma|mar|mra|arm|amr_ : the welcome message will be integrated with rules, about text and moderators list\n\n',
+            all = '*Commands for all*:\n'
+                    ..'`/dashboard` : see all the group info from private\n'
+                    ..'`/rules` (if unlocked) : show the group rules\n'
+                    ..'`/about` (if unlocked) : show the group description\n'
+                    ..'`/modlist` (if unlocked) : show the moderators of the group\n'
+                    ..'`@admin` (if unlocked) : by reply= report the message replied to all the admins; no reply (with text)= send a feedback to all the admins\n'
+                    ..'`/tell` : show your basical info or the info about the user you replied to\n'
+                    ..'`/info` : show some useful informations about the bot\n'
+                    ..'`/c` <feedback> : send a feedback/report a bug/ask a question to my creator. _ANY KIND OF SUGGESTION OR FEATURE REQUEST IS WELCOME_. He will reply ASAP\n'
+                    ..'`/help` : show this message.'
+		            ..'\n\nIf you like this bot, please leave the vote you think it deserves [here](https://telegram.me/storebot?start=groupbutler_bot)',
+		    private = 'Hey, *&&&1*!\n'
+                    ..'I\'m a simple bot created in order to help people to manage their groups.\n'
+                    ..'\n*How can you help me?*\n'
+                    ..'Wew, I have a lot of useful tools! You can *kick or ban* users, set rules and a description, warn users, set some parameters to kick someone when something happens (read: *antiflood*/RTL/media...)\nDiscover more by adding me to a group!\n'
+                    ..'\nThe user who adds me will be set up as owner of the group. If you are not the real owner, you can set it by repliyng one of his messages with `/owner`.'
+                    ..'\nTo use my moderation powers (kick/ban), *you need to add me as administrator of the group*.\nRemember: moderator commands can be used only by who have been promoted with `/promote`. I can\'t see the real admins of the group, this is the only way for now.\n'
+                    ..'\nYou can report bugs/send feedbacks/ask a question to my creator just using "`/c <feedback>`" command. EVERYTHING IS WELCOME!'
+                    ..'\n\n[Official channel](https://telegram.me/GroupButler_ch) and [vote link](https://telegram.me/storebot?start=groupbutler_bot)',
+            group_success = '_I\'ve sent you the help message in private_',
+            group_not_success = '_Please message me first so I can message you_',
+            initial = 'Choose the *role* to see the available commands:'
+        },
+    },
 }
