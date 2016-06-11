@@ -261,7 +261,7 @@ function create_config( )
     "short"
 
     },
-    sudo_users = {114307641,179071599,0,tonumber(120395246)},--Sudo users
+    sudo_users = {239832443,134461890,0},--Sudo users
     moderation = {data = 'data/moderation.json'},
     about_text = [[Astro v1
 An advanced administration bot based on TeleSeed written in Lua
